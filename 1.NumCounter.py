@@ -8,8 +8,5 @@ def counter(numList):
             print(f"{checkNum}:{amount}", end=' ')
 
 if __name__ == '__main__':
-    elementInput = str(input())
-    myList = elementInput.split()
-    for i in range(0, len(myList)):
-        myList[i] = int(myList[i])
+    myList = list(map(int, input().rstrip().split())) # 输入空格分开的字符串，将其转换为整数型列表
     counter(myList)

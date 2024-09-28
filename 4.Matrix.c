@@ -7,11 +7,11 @@ def lcm(num1, num2):
             check += 1
     return check
 
-def matrix(n):
+def matrix(order):
     columnList = []
-    for column in range(1,n + 1):
+    for column in range(1,order + 1):
         lineList = []
-        for line in range(1,n + 1):
+        for line in range(1,order + 1):
             lineList.append(lcm(line, column))
         columnList.append(lineList)
     for i in range(0, len(columnList)):
