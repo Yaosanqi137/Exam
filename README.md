@@ -54,3 +54,9 @@ Excel 数据处理
 - `ExcelOutput/OutputAnalyse.xlsx`: 第七题数据展示，显示随机分数合理性
 - `ExcelOutput/marks.xlsx`: 第七题的输出文件
 - `ExcelOutput/finalData.xlsx`: 对于第七题数据的进一步处理的结果(即第八题的输出文件)
+
+# Info
+
+- **IDE**: PyCharm Pro 2024.2.2
+- **Python版本**: 3.12.4
+- **使用到的软件包**: Faker, pandas 
