@@ -27,5 +27,5 @@ if __name__ == "__main__":
     }
 
     df = pd.DataFrame(students) # 将字典导出为excel
-    df.to_excel('ExcelOutput/marks.xlsx', index=False, header=False)
+    df.to_excel('ExcelOutput/marks.xlsx', index=False)
 
