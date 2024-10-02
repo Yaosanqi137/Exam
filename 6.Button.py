@@ -24,23 +24,28 @@ def errCatch(buttonInput, clickInput): # 异常输入检测
 
 if __name__ == '__main__':
     while 1 : # 只有在输入了正确的数据的时候才会跳出循环,不然一直重新输入数据
-        buttonLine, clickLine = map(int, input().split())  # 获取按钮个数、点击次数
-        if buttonLine < 1 or buttonLine > 10:
-            print("注意!按钮数量应该在 1 到 10 之间,请重新输入数据:")
-            continue
-        if clickLine < 1 or clickLine > 10:
-            print("注意!点击次数应该在 1 到 10 之间,请重新输入数据:")
-            continue
+        buttonLine, clickLine = [], [] # 定义按钮坐标和点击坐标列表
         buttons, clicks = [], []  # 定义存储按钮和点击位置信息的列表
-        for n in range(buttonLine):
-            button = list(map(int, input().split()))  # 逐个录入按钮位置
-            button.append(n + 1)  # 设置按钮 ID
-            buttons.append(button)  # 将每个按钮位置子列表添加到按钮位置列表中
-        for n in range(clickLine):
-            clicks.append(list(map(int, input().split())))  # 逐个录入点击位置
-        buttons.reverse()  # 反转按钮位置存储列表
-        if errCatch(buttons, clicks):
-            break
+        try:
+            buttonLine, clickLine = map(int, input().split())  # 获取按钮个数、点击次数
+            if buttonLine < 1 or buttonLine > 10:
+                print("注意!按钮数量应该在 1 到 10 之间,请重新输入数据:")
+                continue
+            if clickLine < 1 or clickLine > 10:
+                print("注意!点击次数应该在 1 到 10 之间,请重新输入数据:")
+                continue
+            for n in range(buttonLine):
+                button = list(map(int, input().split()))  # 逐个录入按钮位置
+                button.append(n + 1)  # 设置按钮 ID
+                buttons.append(button)  # 将每个按钮位置子列表添加到按钮位置列表中
+            for n in range(clickLine):
+                clicks.append(list(map(int, input().split())))  # 逐个录入点击位置
+            buttons.reverse()  # 反转按钮位置存储列表
+            if errCatch(buttons, clicks):
+                break
+        except ValueError as err:
+            print("请确保你输入了一个整数,并且,你应该用空格隔开每一个数字!请重新输入!")
+            continue
 
     # 数据处理及输出段
     for click in range(0, clickLine):
