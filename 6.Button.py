@@ -9,7 +9,7 @@ def errCatch(buttonInput, clickInput): # 异常输入检测
                 return False
             else:
                 for i in range(0, 4):
-                    if checkButton < 0 or checkButton > 1000 :
+                    if checkButton[i] < 0 or checkButton[i] > 1000 :
                         return False
                 return True
     for checkClick in clickInput:
@@ -24,7 +24,6 @@ def errCatch(buttonInput, clickInput): # 异常输入检测
 
 if __name__ == '__main__':
     while 1 : # 只有在输入了正确的数据的时候才会跳出循环,不然一直重新输入数据
-        buttonLine, clickLine = [], [] # 定义按钮坐标和点击坐标列表
         buttons, clicks = [], []  # 定义存储按钮和点击位置信息的列表
         try:
             buttonLine, clickLine = map(int, input().split())  # 获取按钮个数、点击次数
@@ -45,7 +44,6 @@ if __name__ == '__main__':
                 break
         except ValueError as err:
             print("请确保你输入了一个整数,并且,你应该用空格隔开每一个数字!请重新输入!")
-            continue
 
     # 数据处理及输出段
     for click in range(0, clickLine):
