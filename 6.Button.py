@@ -5,11 +5,12 @@ def errCatch(buttonInput, clickInput): # 异常输入检测
             return False
         else:
             if checkButton[0] >= checkButton[2] or checkButton[1] >= checkButton[3]:
-                print("注意按钮坐标输入格式!应该为(x1 <  x2,y1 < y2),请重新输入数据:")
+                print("注意!按钮坐标输入格式!应该为(x1 <  x2,y1 < y2),请重新输入数据:")
                 return False
             else:
                 for i in range(0, 4):
                     if checkButton[i] < 0 or checkButton[i] > 1000 :
+                        print("注意!任意坐标的值都应当在1 到 1000 之间,请重新输入数据:")
                         return False
                 return True
     for checkClick in clickInput:
@@ -19,6 +20,7 @@ def errCatch(buttonInput, clickInput): # 异常输入检测
         else:
             for j in range(0, 1):
                 if checkClick[j] < 0 or checkClick[j] > 1000 :
+                    print("注意!任意坐标的值都应当在1 到 1000 之间,请重新输入数据:")
                     return False
             return True
 
