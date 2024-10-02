@@ -47,7 +47,7 @@ if __name__ == '__main__':
             if buttonErr(buttons) and clickErr(clicks):
                 break
         except ValueError as err:
-            print("请确保你输入了一个整数,并且,你应该用空格隔开每一个数字!请重新输入!")
+            print("请确保你输入的是整数,并且,你应该用空格隔开每一个数字!请重新输入!")
 
     # 数据处理及输出段
     for click in range(0, clickLine):
