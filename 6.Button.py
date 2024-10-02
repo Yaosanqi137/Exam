@@ -1,4 +1,4 @@
-def errCatch(buttonInput, clickInput): # 异常输入检测
+def buttonErr(buttonInput): # 异常输入检测
     for checkButton in buttonInput:
         if len(checkButton) != 5:
             print("注意!错误的按钮坐标输入,应该为(x1 y1 x2 y2)请重新输入数据:")
@@ -13,6 +13,8 @@ def errCatch(buttonInput, clickInput): # 异常输入检测
                         print("注意!任意坐标的值都应当在1 到 1000 之间,请重新输入数据:")
                         return False
                 return True
+
+def clickErr(clickInput):
     for checkClick in clickInput:
         if len(checkClick) != 2:
             print("注意!错误的点击坐标输入,应该为(x y),请重新输入数据:")
@@ -42,7 +44,7 @@ if __name__ == '__main__':
             for n in range(clickLine):
                 clicks.append(list(map(int, input().split())))  # 逐个录入点击位置
             buttons.reverse()  # 反转按钮位置存储列表
-            if errCatch(buttons, clicks):
+            if buttonErr(buttons) and clickErr(clicks):
                 break
         except ValueError as err:
             print("请确保你输入了一个整数,并且,你应该用空格隔开每一个数字!请重新输入!")
